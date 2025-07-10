@@ -11,11 +11,11 @@ export default function TheatreList() {
             href={show.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="border round-lg overflow-hidden hover:shadow-md transition"
+            className="border rounded-lg overflow-hidden hover:shadow-md transition"
           >
             <img
               src={show.image}
-              alt="show.title"
+              alt={show.title}
               className="w-full h-48 object-cover"
             />
             <p className="p-2 text-center font-semibold">{show.title}</p>
