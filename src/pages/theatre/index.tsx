@@ -1,25 +1,11 @@
-import { useEffect, useState, React } from "react";
-
-type show = {
-  title: string;
-  image: string;
-  link: string;
-};
+import { broadwayShows } from "@/data/broadway-shows";
 
 export default function TheatreList() {
-  const [shows, setShows] = useState<Show[]>([]);
-
-  useEffect(() => {
-    fetch("api/broadway")
-      .then((res) => res.json())
-      .then((data) => setShows(data.shows));
-  }, []);
-
   return (
     <div className="p-8">
       <h1 className="text-3xl font-bold mb-6">Broadway Shows</h1>
       <div className="grid grid-cols-2 md:grid-cols-4 lg-grid-cols-6 gap-4">
-        {shows.map((show, idx) => (
+        {broadwayShows.map((show, idx) => (
           <a
             key={idx}
             href={show.link}
